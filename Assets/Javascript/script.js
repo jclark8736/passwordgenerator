@@ -1,7 +1,17 @@
 // Assignment Code
 
-// CODE SCAFFOLDING FROM MANOLI
+const generateBtn
 
+// CODE SCAFFOLDING FROM MANOLI
+//Making input vars global
+var phPass;
+var numberIn;
+var sCharIn;
+var upperIn;
+var lowerIn;
+
+
+//arrays to pull password from
 //special char array
 
 var specialCharArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
@@ -14,7 +24,7 @@ var numberArr = [1,2,3,4,5,6,7,8,9];
 var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //Upper Case array
-var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // .split will break up an array look up how to do it (from manoli)
+var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // .split will break up an array look up how to do it (from manoli (not used))
 
 
 //END ARRAY
@@ -38,8 +48,21 @@ function getPassword() {
   if (length < 8 || length > 128) {
     alert('Password length must be AT LEAST 8 characters and LESS than 128 characters');
     return null;
-  };
+    }
 
+    //user inputs here
+    else {
+      numberIn = confirm("Will this password contain numbers?")
+      sCharIn = confirm("Will this password contain special characters?")
+      upperIn = confirm("Will this password contain uppercase letters?")
+      lowerIn = confirm("Will this password contain lowercase letters?")
+
+  }; 
+  
+
+  
+
+  //not sure about phPass and length right here, possible debug
   phPass.length = length
 
   //prompts to determine password parameters
