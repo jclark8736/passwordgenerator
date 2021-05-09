@@ -118,15 +118,31 @@ function passwordGen() {
     else if (lowerIn === true) {
         passConcat = lowerCaseArr;
     }
+    // passConcat now contains the selected characters
+    //need to write a function that randomizes the selections and selects the correct number of chars
+    // function = mkRandom
+    //container for results of mkRandom = passRandom
+    //not sure how to call on this properly
+    var passRandom = []
+    // this code tells the machine how  many chars to select and then it will randomize
+    // has to select a string based on length of parsed input length and must select fromm passConcat
+    //inputLength randomly selecting from passConcat and dumping that in passRAndom!!!!!!!
+    //!!!!! REFERENCE
 
-    //need to take the new passConcat array to select random chars
-    //passRandom is the new var to for the output
-    //mkRandom is the function
+    for (var i = 0; i < inputLength; i++ )
+    //math.floor * math.random randomizes its selection by the number of characters within an array
+    //for example if there are 1/100 chars in an array it has a 1/100 chance of picking one of them
+    //for crypto purposes it is not truly random
+    var passRandom = passConcat [Math.floor(Math.random() * passConcat.length)];
+
 
     
 
-
-
-
-
 }
+
+
+//add listener and initialize button
+var generateBtn = document.querySelector("#generate");
+// yesss almost done
+generateBtn.addEventListener("click", passwordGen);
+
