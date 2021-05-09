@@ -58,8 +58,64 @@ function passwordGen() {
     };
     //logic to begin forming the passConcat array
     //need 15
-    if (numberIn && sCharIn && upperIn && lowerIn == true) {
-        passConcat = numberArr.concat(specialCharArr, lowerCaseArr, upperCaseArr)
+    //all four selected
+    if (numberIn && sCharIn && upperIn && lowerIn === true) {
+        passConcat = numberArr.concat(specialCharArr, lowerCaseArr, upperCaseArr);
+    }
+    // three out of four selected (need four)
+    else if (numberIn && upperIn && lowerIn === true) {
+        passConcat = numberArr.concat(lowerCaseArr, upperCaseArr);
+    }
+    else if (numberIn && sCharIn && lowerIn === true) {
+        passConcat = numberArr.concat(specialCharArr, lowerCaseArr);
+    }
+    else if (numberIn && sCharIn && upperIn === true) {
+        passConcat = numberArr.concat(specialCharArr, upperCaseArr);
+    }
+    else if (sCharIn && upperIn && lowerIn === true) {
+        passConcat = numberArr.concat(lowerCaseArr, upperCaseArr);
+    }
+    //there must be a better way of doing this
+    //two options selected. need 6
+    else if (numberIn && sCharIn === true) {
+        passConcat = numberArr.concat(specialCharArr);
+    }
+
+    else if (numberIn && upperIn === true) {
+        passConcat = numberArr.concat(upperCaseArr);
+    }
+
+    else if (numberIn && lowerIn === true) {
+        passConcat = numberArr.concat(lowerCaseArr);
+    }
+
+    else if (sCharIn && upperIn === true) {
+        passConcat = specialCharArr.concat(upperCaseArr);
+    }
+
+    else if (sCharIn && lowerIn === true) {
+        passConcat = specialCharArr.concat(lowerCaseArr);
+    }
+
+    else if (upperIn && lowerIn === true) {
+        passConcat = upperIn.concat(lowerCaseArr);
+    }
+    //single choice concatenations need four
+
+    else if (numberIn === true) {
+        passConcat = numberIn;
+    }
+
+    else if (sCharIn === true) {
+        passConcat = scharIn;
+    }
+
+    else if (upperIn === true) {
+        passConcat = upperIn;
+    }
+
+    else if (lowerIn === true) {
+        passConcat = lowerCaseArr;
     }
 
 
