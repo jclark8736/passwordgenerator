@@ -14,7 +14,10 @@ var upperIn;
 //lowercase selection
 var lowerIn;
 //chars from 8-128
-var inputLength
+var inputLength;
+//final password output
+var passwordFinal = [];
+
 
 // END USER DEFINED VARS
 
@@ -33,6 +36,7 @@ var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 //Upper Case array
 var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // .split will break up an array look up how to do it (from manoli (not used))
 
+    
 
 //END ARRAYS
 
@@ -55,6 +59,7 @@ function passwordGen() {
         upperIn = confirm("Should this password contain uppercase letters?");
         lowerIn = confirm("Should this password contain lowercase letters?");
         
+        inputLength.value = length;
 
     };
     //logic to begin forming the passConcat array
@@ -127,35 +132,44 @@ function passwordGen() {
     // has to select a string based on length of parsed input length and must select fromm passConcat
     //inputLength randomly selecting from passConcat and dumping that in passRAndom!!!!!!!
     //!!!!! REFERENCE
+    var passwordFinal = [];
 
-    //function for getting a random element from an array
-    function getRandomElement(arr) {
-         var randIndex = Math.floor(Math.random() * arr.length);
-         var randElement = arr[randIndex];
-       
-         return randElement;
-       }
-    
-    //need to define randomizer first
-    //passconCat randomly parsed by value of inputLength
-
-    function passRandomizer () {
-        
+    for (var i = 0; i < inputLength; i++) {
+        var randomizer = passConcat[Math.floor(Math.random() * passConcat.length)];
+        passwordFinal.push(randomizer);
     }
 
+   var pass = passwordFinal.join("");
+        UserInput(pass);
+        return pass;
 
-    // for (var i = 0; i < inputLength.length; i++ ) {
-    //     var passConcat = [Math.floor(Math.random() * passConcat.length)];
-    //     var passwordFinal = passConcat[passRandom];
-    //     return passwordFinal;
-
-    // }
-    //math.floor * math.random randomizes its selection by the number of characters within an array
+    function UserInput(pass) {
+        document.getElementById("password").textContent = pass;
     
-    
+    }
+   // function logic provided by ASKBCS
+    //function getRandom(arr) {
+    //     var randIndex = Math.floor(Math.random() * arr.length);
+   //      var 
+       
+   //    randElement = arr[randIndex];
+       
+    //     return randElement;
+    /*
+    if (options.hasSpecialCharacters) {
+    possibleCharacters = possibleCharacters.concat
+
+    (specialCharacters);
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
 
 
-    
+    */
+
+
+    //   }
+
+
 
 }
 
