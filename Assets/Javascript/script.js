@@ -1,6 +1,4 @@
-// Assignment Code
-
-const generateBtn
+// Assignment Code  
 
 // CODE SCAFFOLDING FROM MANOLI
 //Making input vars global
@@ -49,15 +47,12 @@ function getPassword() {
   if (length < 8 || length > 128) {
     alert('Password length must be AT LEAST 8 characters and LESS than 128 characters');
     return null;
-    }
-
-    //user inputs here
-    else {
-      numberIn = confirm("Will your password contain numbers?")
-      sCharIn = confirm("Will your password contain special characters?")
-      upperIn = confirm("Will your password contain uppercase letters?")
-      lowerIn = confirm("Will your password contain lowercase letters?")
     };
+  
+  
+
+
+  
 
 
 

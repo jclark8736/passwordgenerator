@@ -1,6 +1,6 @@
 // Assignment Code  
 
-// CODE SCAFFOLDING FROM MANOLI
+// CODE SCAFFOLDING
 //Making input vars global
 
 //placeholder password to hold concatenation
@@ -123,17 +123,36 @@ function passwordGen() {
     // function = mkRandom
     //container for results of mkRandom = passRandom
     //not sure how to call on this properly
-    var passRandom = []
     // this code tells the machine how  many chars to select and then it will randomize
     // has to select a string based on length of parsed input length and must select fromm passConcat
     //inputLength randomly selecting from passConcat and dumping that in passRAndom!!!!!!!
     //!!!!! REFERENCE
 
-    for (var i = 0; i < inputLength; i++ )
+    //function for getting a random element from an array
+    function getRandomElement(arr) {
+         var randIndex = Math.floor(Math.random() * arr.length);
+         var randElement = arr[randIndex];
+       
+         return randElement;
+       }
+    
+    //need to define randomizer first
+    //passconCat randomly parsed by value of inputLength
+
+    function passRandomizer () {
+        
+    }
+
+
+    // for (var i = 0; i < inputLength.length; i++ ) {
+    //     var passConcat = [Math.floor(Math.random() * passConcat.length)];
+    //     var passwordFinal = passConcat[passRandom];
+    //     return passwordFinal;
+
+    // }
     //math.floor * math.random randomizes its selection by the number of characters within an array
-    //for example if there are 1/100 chars in an array it has a 1/100 chance of picking one of them
-    //for crypto purposes it is not truly random
-    var passRandom = passConcat [Math.floor(Math.random() * passConcat.length)];
+    
+    
 
 
     
@@ -143,6 +162,5 @@ function passwordGen() {
 
 //add listener and initialize button
 var generateBtn = document.querySelector("#generate");
-// yesss almost done
 generateBtn.addEventListener("click", passwordGen);
 
