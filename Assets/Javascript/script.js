@@ -9,6 +9,7 @@ var numberIn;
 var sCharIn;
 var upperIn;
 var lowerIn;
+var selection
 
 
 //arrays to pull password from
@@ -52,10 +53,13 @@ function getPassword() {
 
     //user inputs here
     else {
-      numberIn = confirm("Will this password contain numbers?")
-      sCharIn = confirm("Will this password contain special characters?")
-      upperIn = confirm("Will this password contain uppercase letters?")
-      lowerIn = confirm("Will this password contain lowercase letters?")
+      numberIn = confirm("Will your password contain numbers?")
+      sCharIn = confirm("Will your password contain special characters?")
+      upperIn = confirm("Will your password contain uppercase letters?")
+      lowerIn = confirm("Will your password contain lowercase letters?")
+    };
+
+
 
   }; 
   
@@ -69,7 +73,7 @@ function getPassword() {
 
 
 
-}
+};
 
 
 //MANOLI NOTES
