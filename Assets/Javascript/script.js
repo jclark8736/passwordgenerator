@@ -4,52 +4,61 @@
 
 //special char array
 
-var specialCharArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
+var specialCharArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
 
 //number array 
-var numberArr = [1,2,3,4,5,6,7,8,9]
+var numberArr = [1,2,3,4,5,6,7,8,9];
 
 //lowercase Array
-var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //Upper Case array
-var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] // .split will break up an array look up how to do it (from manoli)
+var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // .split will break up an array look up how to do it (from manoli)
 
 
 //END ARRAY
 
 //function to prompt user for password options
 function getPassword() {
+  var phPass = {};
   //create a variable to store password length
-  var length = parseInt (
-    prompt ('How many characters would you like your password to be?')
-  )
+  //phPass = placeholder password
+  var length = prompt(
+    "Choose a number from 8-128 for your password"
+  );
+  length = parseInt(length);
+  
   //create conditional statement to check if password length is actually a number
   if (Number.isNan(length)) {
-    allert ('password must be a number');
+    alert ('password must be a number');
     return null;
   };
   //conditional statement to check if password is at least 8 chars
-  if (length < 8) {
-    alert('Password length must be AT LEAST 8 characters');
+  if (length < 8 || length > 128) {
+    alert('Password length must be AT LEAST 8 characters and LESS than 128 characters');
     return null;
   };
-  //conditional statement to check if password length is at least 128 chars
-  if (length > 128) {
-    alert('Password length cannot exceed 128 characters');
-  };
+
+  phPass.length = length
+
+  //prompts to determine password parameters
+
+
+
 }
 
+
+//MANOLI NOTES
 //this stuff all needs to be in the main function
 //create a confirmation prompt  for type of chars
 //need to create conditional statement that checks if user included at least 1 of the char types.return user to start
-var possiblePass = {
+//var possiblePass = {
 //we need to store length and all characters selected by users
-length:length
-specialChars:specialChars
-}
-return possiblePass;
+//length:length
+//specialChars:specialChars
+//}
+//return possiblePass;
 
 //create a function for getting a random element from an array
 function getRandomLetters(array) {
