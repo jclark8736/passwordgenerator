@@ -46,6 +46,7 @@ function passwordGen() {
     else if (inputLength > 128) {
         alert("Your password must have less than 128 characters");
         return null;
+    
     }
     //user selections on variables
     else {
@@ -117,6 +118,13 @@ function passwordGen() {
     else if (lowerIn === true) {
         passConcat = lowerCaseArr;
     }
+
+    //need to take the new passConcat array to select random chars
+    //passRandom is the new var to for the output
+    //mkRandom is the function
+
+    
+
 
 
 
