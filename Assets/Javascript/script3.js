@@ -17,6 +17,8 @@ var lowerIn;
 var inputLength;
 //final password output
 var passwordFinal = [];
+//var for console.log to write to
+randomizer = [];
 
 
 // END USER DEFINED VARS
@@ -24,11 +26,11 @@ var passwordFinal = [];
 //arrays to pull password from
 //special char array
 
-var specialCharArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[","]", "^", "_", "`", "{", "|", "}", "~"];
 
 
 //number array 
-var numberArr = [1,2,3,4,5,6,7,8,9];
+var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //lowercase Array
 var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -36,7 +38,7 @@ var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 //Upper Case array
 var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // .split will break up an array look up how to do it (from manoli (not used))
 
-    
+
 
 //END ARRAYS
 
@@ -50,7 +52,7 @@ function passwordGen() {
     else if (inputLength > 128) {
         alert("Your password must have less than 128 characters");
         return null;
-    
+
     }
     //user selections on variables
     else {
@@ -58,7 +60,7 @@ function passwordGen() {
         sCharIn = confirm("Should this password contain special characters? ex. !@#$");
         upperIn = confirm("Should this password contain uppercase letters?");
         lowerIn = confirm("Should this password contain lowercase letters?");
-        
+
         inputLength.value = length;
 
     };
@@ -132,43 +134,44 @@ function passwordGen() {
     // has to select a string based on length of parsed input length and must select fromm passConcat
     //inputLength randomly selecting from passConcat and dumping that in passRAndom!!!!!!!
     //!!!!! REFERENCE
-    var passwordFinal = [];
+    var pass = [];
 
     for (var i = 0; i < inputLength; i++) {
         var randomizer = passConcat[Math.floor(Math.random() * passConcat.length)];
+
         passwordFinal.push(randomizer);
+        console.log(randomizer);
+        // document.getElementById("password").value = passwordFinal;
+
+
     }
 
-   var pass = passwordFinal.join("");
-        UserInput(pass);
-        return pass;
+    var pass = passwordFinal.join("");
+    console.log(pass);
+    UserInput(pass);
+    return pass;
+
 
     function UserInput(pass) {
         document.getElementById("password").textContent = pass;
-    
+
     }
-   // function logic provided by ASKBCS
+    // function logic provided by ASKBCS
     //function getRandom(arr) {
     //     var randIndex = Math.floor(Math.random() * arr.length);
-   //      var 
-       
-   //    randElement = arr[randIndex];
-       
+    //      var 
+
+    //    randElement = arr[randIndex];
+
     //     return randElement;
     /*
-    if (options.hasSpecialCharacters) {
-    possibleCharacters = possibleCharacters.concat
+if (options.hasSpecialCharacters) {
+    possibleCharacters = possibleCharacters.concat
 
-    (specialCharacters);
-    guaranteedCharacters.push(getRandom(specialCharacters));
-  }
-
-
+(specialCharacters);
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
     */
-
-
-    //   }
-
 
 
 }
