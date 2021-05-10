@@ -125,15 +125,10 @@ function passwordGen() {
     else if (lowerIn === true) {
         passConcat = lowerCaseArr;
     }
-    // passConcat now contains the selected characters
-    //need to write a function that randomizes the selections and selects the correct number of chars
-    // function = mkRandom
-    //container for results of mkRandom = passRandom
+
     //not sure how to call on this properly
     // this code tells the machine how  many chars to select and then it will randomize
     // has to select a string based on length of parsed input length and must select fromm passConcat
-    //inputLength randomly selecting from passConcat and dumping that in passRAndom!!!!!!!
-    //!!!!! REFERENCE
     var pass = [];
 
     for (var i = 0; i < inputLength; i++) {
@@ -155,23 +150,7 @@ function passwordGen() {
         document.getElementById("password").textContent = pass;
 
     }
-    // function logic provided by ASKBCS
-    //function getRandom(arr) {
-    //     var randIndex = Math.floor(Math.random() * arr.length);
-    //      var 
-
-    //    randElement = arr[randIndex];
-
-    //     return randElement;
-    /*
-if (options.hasSpecialCharacters) {
-    possibleCharacters = possibleCharacters.concat
-
-(specialCharacters);
-    guaranteedCharacters.push(getRandom(specialCharacters));
-  }
-    */
-
+ 
 
 }
 
