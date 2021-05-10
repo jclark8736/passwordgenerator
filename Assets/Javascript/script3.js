@@ -141,12 +141,11 @@ function passwordGen() {
 
         passwordFinal.push(randomizer);
         console.log(randomizer);
-        // document.getElementById("password").value = passwordFinal;
-
 
     }
 
     var pass = passwordFinal.join("");
+    console.log(passwordFinal)
     console.log(pass);
     UserInput(pass);
     return pass;
