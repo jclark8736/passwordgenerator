@@ -4,7 +4,7 @@
 //Making input vars global
 
 //placeholder password to hold concatenation
-var passConcat;
+var passConcat= [];
 //number selection
 var numberIn;
 //special char selection
@@ -15,10 +15,7 @@ var upperIn;
 var lowerIn;
 //chars from 8-128
 var inputLength;
-//final password output
-var passwordFinal = [];
-//var for console.log to write to
-randomizer = [];
+
 
 
 // END USER DEFINED VARS
@@ -42,7 +39,12 @@ var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 
 //END ARRAYS
 
+
 function passwordGen() {
+    passConcat=[]
+    randomizer=[]
+    passwordFinal=[]
+    
     inputLength = parseInt(prompt("Choose a number between 8 and 128"));
     //check user input on length
     if (inputLength < 8) {
@@ -64,69 +66,25 @@ function passwordGen() {
     
 
     };
-    //logic to begin forming the passConcat array
-    //need 15
-    //all four selected
-    if (numberIn && sCharIn && upperIn && lowerIn === true) {
-        passConcat = numberArr.concat(specialCharArr, lowerCaseArr, upperCaseArr);
+
+
+
+    if (numberIn === true) {
+        passConcat = passConcat.concat(numberArr)
+        console.log(passConcat)
+    } 
+    if (sCharIn=== true) {
+        passConcat= passConcat.concat(specialCharArr)
+        console.log(passConcat)
     }
-    // three out of four selected (need four)
-    else if (numberIn && upperIn && lowerIn === true) {
-        passConcat = numberArr.concat(lowerCaseArr, upperCaseArr);
+    if (upperIn === true) {
+        passConcat= passConcat.concat(upperCaseArr)
     }
-    else if (numberIn && sCharIn && lowerIn === true) {
-        passConcat = numberArr.concat(specialCharArr, lowerCaseArr);
-    }
-    else if (numberIn && sCharIn && upperIn === true) {
-        passConcat = numberArr.concat(specialCharArr, upperCaseArr);
-    }
-    else if (sCharIn && upperIn && lowerIn === true) {
-        passConcat = numberArr.concat(lowerCaseArr, upperCaseArr);
-    }
-    //there must be a better way of doing this
-    //two options selected. need 6
-    else if (numberIn && sCharIn === true) {
-        passConcat = numberArr.concat(specialCharArr);
+    if (upperIn === true) {
+        passConcat= passConcat.concat(lowerCaseArr)
+        console.log(passConcat)
     }
 
-    else if (numberIn && upperIn === true) {
-        passConcat = numberArr.concat(upperCaseArr);
-    }
-
-    else if (numberIn && lowerIn === true) {
-        passConcat = numberArr.concat(lowerCaseArr);
-    }
-
-    else if (sCharIn && upperIn === true) {
-        passConcat = specialCharArr.concat(upperCaseArr);
-    }
-
-    else if (sCharIn && lowerIn === true) {
-        passConcat = specialCharArr.concat(lowerCaseArr);
-    }
-
-    else if (upperIn && lowerIn === true) {
-        passConcat = upperIn.concat(lowerCaseArr);
-    }
-    //single choice concatenations need four
-
-    else if (numberIn === true) {
-        passConcat = numberIn;
-    }
-
-    else if (sCharIn === true) {
-        passConcat = scharIn;
-    }
-
-    else if (upperIn === true) {
-        passConcat = upperIn;
-    }
-
-    else if (lowerIn === true) {
-        passConcat = lowerCaseArr;
-    }
-
-    //not sure how to call on this properly
     // this code tells the machine how  many chars to select and then it will randomize
     // has to select a string based on length of parsed input length and must select fromm passConcat
     var pass = [];
@@ -147,7 +105,7 @@ function passwordGen() {
 
 
     function UserInput(pass) {
-        document.getElementById("password").textContent = pass;
+        document.getElementById("password").value = pass;
 
     }
  
