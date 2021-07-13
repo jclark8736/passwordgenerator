@@ -1,6 +1,3 @@
-// Assignment Code  
-
-// CODE SCAFFOLDING
 //Making input vars global
 
 //placeholder password to hold concatenation
