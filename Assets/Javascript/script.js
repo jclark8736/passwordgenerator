@@ -158,4 +158,3 @@ function passwordGen() {
 //add listener and initialize button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", passwordGen);
-
